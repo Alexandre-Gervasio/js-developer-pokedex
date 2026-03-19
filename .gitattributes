@@ -1,7 +1,0 @@
-# Força o GitHub a tratar todo CSS e HTML como documentação (não conta na barra)
-*.css linguist-documentation=false
-*.html linguist-documentation=false
-
-# Garante que o JavaScript sejam detectados como código principal
-*.js linguist-detectable=true
-*.html linguist-detectable=false
