@@ -3,44 +3,105 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex</title>
 
     <!-- Normalize CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- Font Roboto -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    
+    <!-- Fontes Roboto -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
 
     <!-- Nosso CSS -->
-    <link rel="stylesheet" href="/assets/css/global.css">
-    <link rel="stylesheet" href="/assets/css/pokedex.css">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/pokedex.css">
+    <link rel="stylesheet" href="assets/css/pokemon_details.css">
+
 </head>
 
 <body>
+
     <section class="content">
         <h1>Pokedex</h1>
+
+        <div class="pokedex-filter">
+
+            <input 
+                type="text" 
+                id="searchPokemon"
+                placeholder="Buscar Pokémon..."
+            >
+
+            <select id="filterType">
+
+                <option value="all">Todos os tipos</option>
+                <option value="grass">Grass</option>
+                <option value="fire">Fire</option>
+                <option value="water">Water</option>
+                <option value="electric">Electric</option>
+                <option value="bug">Bug</option>
+                <option value="normal">Normal</option>
+                <option value="poison">Poison</option>
+                <option value="ground">Ground</option>
+                <option value="fairy">Fairy</option>
+                <option value="fighting">Fighting</option>
+                <option value="psychic">Psychic</option>
+                <option value="rock">Rock</option>
+                <option value="ghost">Ghost</option>
+                <option value="ice">Ice</option>
+                <option value="dragon">Dragon</option>
+                <option value="dark">Dark</option>
+                <option value="steel">Steel</option>
+                <option value="flying">Flying</option>
+
+            </select>
+
+        </div>
 
         <ol id="pokemonList" class="pokemons">
             <!-- ..... Pokemons here ..... -->
         </ol>
 
-        <div class="pagination">
+
+        <!-- <div class="pagination">
             <button id="loadMoreButton" type="button">
                 Load More
             </button>
-        </div>
+
+        </div> -->
     </section>
 
+    <div id="pokemonModal" class="modal">
+
+        <div class="modal-content">
+
+            <span class="close">&times;</span>
+
+            <!-- Conteúdo do Pokémon -->
+            <div id="pokemonDetails"></div>
+
+            <!-- Evoluções -->
+            <div id="evolutionList"></div>
+
+        </div>
+
+    </div>
+
     <!-- Nosso JS -->
-    <script src="/assets/js/pokemon-model.js"></script>
-    <script src="/assets/js/poke-api.js"></script>
-    <script src="/assets/js/main.js"></script>
+    <!-- Model -->
+    <script src="assets/js/pokemon-model.js" defer></script>
+
+    <!-- API -->
+    <script src="assets/js/poke-api.js" defer></script>
+
+    <!-- Lista principal -->
+    <script src="assets/js/main.js" defer></script>
+
+    <!-- Detalhes do pokemon -->
+    <script src="assets/js/pokemon-details.js" defer></script>
+
 </body>
 
 </html>

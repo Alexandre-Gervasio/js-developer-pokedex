@@ -1,0 +1,211 @@
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(10,10,20,0.75);
+    backdrop-filter: blur(6px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 1rem;
+}
+
+.modal.active {
+    display: flex !important;
+}
+
+.modal-content {
+    background: #fff;
+    width: 95%;
+    max-width: 500px;
+    max-height: 90vh;
+    border-radius: 24px;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 24px 60px rgba(0,0,0,.35);
+}
+
+.close {
+    position: absolute;
+    right: 14px;
+    top: 10px;
+    font-size: 26px;
+    cursor: pointer;
+    color: rgba(255,255,255,.8);
+    z-index: 10;
+}
+
+.close:hover { color: #fff; }
+
+/* HEADER */
+.modal-header {
+    padding: 2rem 1.5rem 1.5rem;
+    text-align: center;
+    border-radius: 24px 24px 0 0;
+}
+
+.modal-header h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #fff;
+    text-transform: capitalize;
+    margin: 0 0 .25rem;
+    text-shadow: 0 2px 6px rgba(0,0,0,.2);
+}
+
+.modal-header h2 span {
+    font-size: .9rem;
+    font-weight: 400;
+    opacity: .7;
+    margin-left: .3rem;
+}
+
+.poke-types {
+    display: flex;
+    gap: .4rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: .2rem;
+}
+
+/* BODY */
+.modal-body {
+    padding: 1rem 1.5rem 1.5rem;
+    text-align: center;
+}
+
+/* Imagem principal — classe específica, não afeta evoluções */
+.poke-main-img {
+    width: 160px;
+    height: 160px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 10px;
+    filter: drop-shadow(0 8px 16px rgba(0,0,0,.25));
+}
+
+.poke-description {
+    font-size: .85rem;
+    color: #555;
+    line-height: 1.6;
+    margin: .5rem 0 1.25rem;
+    font-style: italic;
+}
+
+/* INFO GRID */
+.poke-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .6rem;
+    margin-bottom: 1.25rem;
+    text-align: left;
+}
+
+.poke-info-item {
+    background: #f7f7f7;
+    border-radius: 12px;
+    padding: .6rem .8rem;
+    font-size: .8rem;
+    color: #333;
+}
+
+.poke-info-item strong {
+    display: block;
+    font-size: .65rem;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: #999;
+    margin-bottom: .2rem;
+}
+
+/* STATS */
+.stats-section h3,
+.evo-title {
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: #aaa;
+    margin: 1.25rem 0 .6rem;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: .4rem;
+    text-align: left;
+}
+
+.stat-row {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    margin-bottom: .45rem;
+}
+
+.stat-name {
+    width: 80px;
+    text-align: right;
+    color: #888;
+    font-size: .72rem;
+    text-transform: capitalize;
+    flex-shrink: 0;
+}
+
+.stat-bar-bg {
+    flex: 1;
+    height: 8px;
+    background: #eee;
+    border-radius: 99px;
+    overflow: hidden;
+}
+
+.stat-bar {
+    height: 100%;
+    border-radius: 99px;
+    background: var(--modal-color, #678fee);
+    transition: width .6s ease;
+}
+
+.stat-value {
+    width: 28px;
+    font-weight: 700;
+    font-size: .75rem;
+    color: #444;
+    text-align: right;
+}
+
+/* EVOLUÇÕES */
+#evolutionList {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding: 0 20px 20px;
+    margin-top: 8px;
+}
+
+.evolution-card {
+    width: 90px;
+    padding: .5rem;
+    border-radius: .6rem;
+    text-align: center;
+    font-size: .8rem;
+    background: #f2f2f2;
+    transition: transform .15s;
+}
+
+.evolution-card:hover {
+    transform: scale(1.05);
+}
+
+/* Tamanho fixo para não ser afetado por nenhuma outra regra */
+.evolution-card img {
+    width: 70px !important;
+    height: 70px !important;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 4px;
+    filter: none !important;
+}
+
+.evolution-card div {
+    text-transform: capitalize;
+    font-weight: 600;
+    color: #444;
+}
